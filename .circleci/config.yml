@@ -11,6 +11,7 @@ jobs:
       - checkout
       - android/restore-gradle-cache:
           cache-prefix: gradle-v1
+          find_args: ". -name 'build.gradle*' -o -name 'settings.gradle*'"
       - run:
           name: Chmod Gradlew
           command: chmod +x ./gradlew
