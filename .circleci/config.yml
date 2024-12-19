@@ -3,9 +3,8 @@ orbs:
   android: circleci/android@3.0.0
 jobs:
   build:
-    executor:
-      docker:
-        - image: cimg/android:2024.11-ndk
+    docker:
+      - image: cimg/android:2024.11-ndk
     steps:
       - checkout
       - android/accept-licenses
