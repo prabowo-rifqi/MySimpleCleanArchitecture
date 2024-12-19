@@ -25,7 +25,7 @@ jobs:
     executor: android/default
     steps:
       - checkout
-      - android/restore_gradle_cache:
+      - restore_gradle_cache:
           cache-prefix: gradle-v1
       - android/setup-emulator:
           api-level: 30
