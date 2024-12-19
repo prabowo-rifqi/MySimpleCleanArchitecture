@@ -7,7 +7,6 @@ jobs:
       - image: cimg/android:2024.11-ndk
     steps:
       - checkout
-      - android/accept-licenses
       - run:
           name: Chmod Gradlew
           command: chmod +x ./gradlew
