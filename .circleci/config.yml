@@ -5,10 +5,11 @@ orbs:
 
 jobs:
   build:
-    executor: android/default
+    docker:
+      - image: cimg/android:2024.11
     steps:
       - checkout
-      - restore-gradle-cache:
+      - android/restore-gradle-cache:
           cache-prefix: gradle-v1
       - run:
           name: Chmod Gradlew
@@ -25,7 +26,7 @@ jobs:
     executor: android/default
     steps:
       - checkout
-      - restore_gradle_cache:
+      - android/restore_gradle_cache:
           cache-prefix: gradle-v1
       - android/setup-emulator:
           api-level: 30
