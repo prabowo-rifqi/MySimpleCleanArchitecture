@@ -9,6 +9,9 @@ jobs:
       tag: default
     steps:
       - checkout
+      - run:
+          name: Chmod permissions
+          command: chmod +x ./gradlew
       - android/create_avd:
           avd_name: myavd
           install: true
